@@ -12,7 +12,7 @@ cat << info
 
  ==================================
 |           SocksProxy             |
-|    by Allan Alcaraz Hinahon      |
+|    by NEW LEGENDS OVPN           |
  ==================================
    - Client Auto-Disconnect
    - Multiport
