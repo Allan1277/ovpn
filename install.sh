@@ -12,7 +12,7 @@ cat << info
 
  ==================================
 |           SocksProxy             |
-|    by Allan Alcaraz Hinahon     |
+|    by Allan Alcaraz Hinahon      |
  ==================================
    - Client Auto-Disconnect
    - Multiport
@@ -35,6 +35,7 @@ read -p "Press ENTER to continue..."
 drbp=550
 ovpn=1194
 ws_ssh=80
+squid=8888
 ws_ovpn=2082
 st_ssh=443
 st_ovpn=2083
@@ -387,8 +388,10 @@ proto tcp
 remote 127.0.0.1 $ovpn
 route-method exe
 mute-replay-warnings
-http-proxy $MYIP 8880
+http-proxy $MYIP 8888
 verb 3
+setenv CLIENT_CERT 0
+setenv FRIENDLY_NAME "NEWLEGENDS"
 auth-user-pass
 cipher none
 auth none
@@ -494,11 +497,11 @@ echo "Installing BadVPN."
 docker run -d --restart always --name badvpn \
  --net host --cap-add NET_ADMIN \
  --entrypoint "badvpn-udpgw" \
- aah/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 1
+ xdcb/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
 
-echo "Adding menu 'aah'."
+echo "Adding menu 'xdcb'."
 bin=/usr/local/bin
-cat << 'menu' > $bin/aah
+cat << 'menu' > $bin/xdcb
 #!/bin/bash
 if [ "$(id -u)" -ne 0 ]; then
   echo -ne "\nPlease execute this script as root.\n"
@@ -578,9 +581,9 @@ cat << msg
      - add
      - list
      - del
-| Usage: aah [option]
+| Usage: xdcb [option]
 
-Allan Alcaraz Hinahon (LANTIN)
+By; Allan Alcaraz Hinahon (LANTIN)
 msg
 exit 0
 menu
@@ -625,8 +628,6 @@ cat << info | tee ~/socksproxylog.txt
 | Log output: /root/socksproxylog.txt |
 | =================================== |
 | Use "xdcb" for the menu             |
-| Contact me @                        |
-|    - https://fb.me/theMovesFever    |
  =====================================
  
 info
