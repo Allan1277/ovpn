@@ -374,7 +374,7 @@ sport = $ws_ovpn
 dport = $ovpn
 basic
 
-echo "<font color=\"green\">Dexter Cellona Banawon (X-DCB)</font>" > $loc/message
+echo "<font color=\"blue\">Allan Alcaraz Hinahon (LANTIN)</font>" > $loc/message
 
 web=$loc/web
 mkdir $web 2> /dev/null
@@ -494,7 +494,7 @@ echo "Installing BadVPN."
 docker run -d --restart always --name badvpn \
  --net host --cap-add NET_ADMIN \
  --entrypoint "badvpn-udpgw" \
- aah/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
+ aah/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 1
 
 echo "Adding menu 'aah'."
 bin=/usr/local/bin
@@ -563,11 +563,11 @@ egrep -v 'root|:[\*!]' /etc/shadow | sed -e 's|:.*||g;s|^|   - |g' -
 exit 0
 }
 case $1 in
-accadd)
+add)
     add;;
-accdel)
+del)
     del;;
-acclist)
+list)
     list;;
 esac
 cat << msg
@@ -575,12 +575,12 @@ cat << msg
  ==================
 |   Menu Options   |
  ==================
-     - accadd
-     - acclist
-     - accdel
-| Usage: xdcb [option]
+     - add
+     - list
+     - del
+| Usage: aah [option]
 
-Credits: Dexter Cellona Banawon (X-DCB)
+Allan Alcaraz Hinahon (LANTIN)
 msg
 exit 0
 menu
