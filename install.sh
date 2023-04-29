@@ -12,7 +12,7 @@ cat << info
 
  ==================================
 |           SocksProxy             |
-|    by Dexter Cellona Banawon     |
+|    by Allan Alcaraz Hinahon     |
  ==================================
    - Client Auto-Disconnect
    - Multiport
