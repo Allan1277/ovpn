@@ -494,11 +494,11 @@ echo "Installing BadVPN."
 docker run -d --restart always --name badvpn \
  --net host --cap-add NET_ADMIN \
  --entrypoint "badvpn-udpgw" \
- xdcb/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
+ aah/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
 
-echo "Adding menu 'xdcb'."
+echo "Adding menu 'aah'."
 bin=/usr/local/bin
-cat << 'menu' > $bin/xdcb
+cat << 'menu' > $bin/aah
 #!/bin/bash
 if [ "$(id -u)" -ne 0 ]; then
   echo -ne "\nPlease execute this script as root.\n"
