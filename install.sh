@@ -583,7 +583,7 @@ cat << msg
      - del
 | Usage: xdcb [option]
 
-By; Allan Alcaraz Hinahon (LANTIN)
+By; NEW LEGENDS OVPN (LANTIN)
 msg
 exit 0
 menu
