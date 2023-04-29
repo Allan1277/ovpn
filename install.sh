@@ -34,7 +34,7 @@ read -p "Press ENTER to continue..."
 # Ports
 drbp=550
 ovpn=1194
-ws_ssh=80
+ws_ssh=8888
 squid=80
 ws_ovpn=2082
 st_ssh=443
@@ -375,7 +375,7 @@ sport = $ws_ovpn
 dport = $ovpn
 basic
 
-echo "<font color=\"blue\">Allan Alcaraz Hinahon (LANTIN)</font>" > $loc/message
+echo "<font color=\"blue\">NEW LEGENDS OVPN (LANTIN)</font>" > $loc/message
 
 web=$loc/web
 mkdir $web 2> /dev/null
