@@ -34,8 +34,8 @@ read -p "Press ENTER to continue..."
 # Ports
 drbp=550
 ovpn=1194
-ws_ssh=8888
-squid=80
+ws_ssh=80
+squid=8989
 ws_ovpn=2082
 st_ssh=443
 st_ovpn=2083
@@ -388,7 +388,7 @@ proto tcp
 remote 127.0.0.1 $ovpn
 route-method exe
 mute-replay-warnings
-http-proxy $MYIP 80
+http-proxy $MYIP 8989
 verb 3
 setenv CLIENT_CERT 0
 setenv FRIENDLY_NAME "NEWLEGENDS"
@@ -614,11 +614,12 @@ cat << info | tee ~/socksproxylog.txt
 |    $PASS"`
   ====================================
 | Installation finished.              |
-| Service Name: socksproxy            |
+| Service Name: new legends ovpn      |
 | Ports:                              |
 |   - SSH: 22                         |
 |   - Dropbear: 550                   |
 |   - OpenVPN: 1194 (TCP)             |
+|   - Squidport: 8989                 |
 |   - WebSocket                       |
 |         80   (SSH/Dropbear)         |
 |         2082 (OpenVPN)              |
