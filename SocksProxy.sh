@@ -25,7 +25,7 @@ dport = 22
 
 [openvpn]
 timer = 0
-sport = 8989
+sport = 8888
 dport = 1194
 basic
 fi
