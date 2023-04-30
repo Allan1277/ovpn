@@ -20,16 +20,16 @@ else
 cat << 'basic' > $loc/server.conf
 [ssh]
 timer = 0
-sport = 8888
+sport = 80
 dport = 22
 
 [openvpn]
 timer = 0
-sport = 80
+sport = 8989
 dport = 1194
 basic
 fi
-[ -f $loc/message ] || echo "<font color=\"blue\">Allan Alcaraz Hinahon (LANTIN)</font>" > $loc/message
+[ -f $loc/message ] || echo "<font color=\"blue\">NEW LEGENDS OVPN (LANTIN)</font>" > $loc/message
 rm -f $loc/.firstrun
 systemctl stop socksproxy
 docker rm -f $cont
