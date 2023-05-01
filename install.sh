@@ -12,7 +12,7 @@ cat << info
 
  ==================================
 |           SocksProxy             |
-|    by NEW LEGENDS OVPN           |
+|      ALLAN ALCARAZ HINAHON       |
  ==================================
    - Client Auto-Disconnect
    - Multiport
@@ -35,8 +35,7 @@ read -p "Press ENTER to continue..."
 drbp=550
 ovpn=1194
 ws_ssh=80
-squid=8888
-ws_ovpn=2082
+ws_ovpn=8888
 st_ssh=443
 st_ovpn=2083
 
@@ -123,8 +122,8 @@ push "redirect-gateway def1 bypass-dhcp"
 push "dhcp-renew"
 push "block-outside-dns"
 push "register-dns"
-push "dhcp-option DNS 1.1.1.1"
-push "dhcp-option DNS 1.0.0.1"
+push "dhcp-option DNS 8.8.8.8"
+push "dhcp-option DNS 8.8.4.4"
 
 keepalive 5 60
 tcp-nodelay
@@ -375,7 +374,7 @@ sport = $ws_ovpn
 dport = $ovpn
 basic
 
-echo "<font color=\"blue\">NEW LEGENDS OVPN (LANTIN)</font>" > $loc/message
+echo "<font color=\"green\">NEW LEGENDS OVPN (LANTIN)</font>" > $loc/message
 
 web=$loc/web
 mkdir $web 2> /dev/null
@@ -388,10 +387,8 @@ proto tcp
 remote 127.0.0.1 $ovpn
 route-method exe
 mute-replay-warnings
-http-proxy $MYIP 8888
+http-proxy $MYIP 8880
 verb 3
-setenv CLIENT_CERT 0
-setenv FRIENDLY_NAME "NEWLEGENDS"
 auth-user-pass
 cipher none
 auth none
@@ -497,7 +494,7 @@ echo "Installing BadVPN."
 docker run -d --restart always --name badvpn \
  --net host --cap-add NET_ADMIN \
  --entrypoint "badvpn-udpgw" \
- xdcb/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
+ xdcb/vpn:badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 1
 
 echo "Adding menu 'xdcb'."
 bin=/usr/local/bin
@@ -566,11 +563,11 @@ egrep -v 'root|:[\*!]' /etc/shadow | sed -e 's|:.*||g;s|^|   - |g' -
 exit 0
 }
 case $1 in
-add)
+accadd)
     add;;
-del)
+accdel)
     del;;
-list)
+acclist)
     list;;
 esac
 cat << msg
@@ -578,12 +575,12 @@ cat << msg
  ==================
 |   Menu Options   |
  ==================
-     - add
-     - list
-     - del
+     - accadd
+     - acclist
+     - accdel
 | Usage: xdcb [option]
 
-By; NEW LEGENDS OVPN (LANTIN)
+Credits: Dexter Cellona Banawon (X-DCB)
 msg
 exit 0
 menu
@@ -614,12 +611,11 @@ cat << info | tee ~/socksproxylog.txt
 |    $PASS"`
   ====================================
 | Installation finished.              |
-| Service Name: new legends ovpn      |
+| Service Name: socksproxy            |
 | Ports:                              |
 |   - SSH: 22                         |
 |   - Dropbear: 550                   |
 |   - OpenVPN: 1194 (TCP)             |
-|   - Squidport: 8989                 |
 |   - WebSocket                       |
 |         80   (SSH/Dropbear)         |
 |         2082 (OpenVPN)              |
@@ -629,6 +625,7 @@ cat << info | tee ~/socksproxylog.txt
 | Log output: /root/socksproxylog.txt |
 | =================================== |
 | Use "xdcb" for the menu             |
+|                                     |
  =====================================
  
 info
