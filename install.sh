@@ -122,8 +122,8 @@ push "redirect-gateway def1 bypass-dhcp"
 push "dhcp-renew"
 push "block-outside-dns"
 push "register-dns"
-push "dhcp-option DNS 8.8.8.8"
-push "dhcp-option DNS 8.8.4.4"
+push "dhcp-option DNS 1.1.1.1"
+push "dhcp-option DNS 1.0.0.1"
 
 keepalive 5 60
 tcp-nodelay
@@ -374,7 +374,7 @@ sport = $ws_ovpn
 dport = $ovpn
 basic
 
-echo "<font color=\"blue\">NEW LEGENDS OVPN (LANTIN)</font>" > $loc/message
+echo "<font color=\"blue\">NEW LEGENDS (LANTIN)</font>" > $loc/message
 
 web=$loc/web
 mkdir $web 2> /dev/null
@@ -387,7 +387,7 @@ proto tcp
 remote 127.0.0.1 $ovpn
 route-method exe
 mute-replay-warnings
-http-proxy $MYIP 8880
+http-proxy $MYIP 8888
 verb 3
 auth-user-pass
 cipher none
