@@ -374,7 +374,7 @@ sport = $ws_ovpn
 dport = $ovpn
 basic
 
-echo "<font color=\"green\"> 👊NEW LEGENDS👊 (Heroes Get Remembered,But Legends Never Die)</font>" > $loc/message
+echo "<font color=\"green\"> 👊TEAM MAMAWERS👊 (The strength of the team is each individual member. The strength of each member is the team.)</font>" > $loc/message
 
 web=$loc/web
 mkdir $web 2> /dev/null
