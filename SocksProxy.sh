@@ -29,7 +29,7 @@ sport = 8888
 dport = 1194
 basic
 fi
-[ -f $loc/message ] || echo "<font color=\"green\">TEAM MAMAWERS (👊TOL👊)</font>" > $loc/message
+[ -f $loc/message ] || echo "<font color=\"green\"> 👊NEW LEGENDS👊 (Heroes Get Remembered,But Legends Never Die)</font>" > $loc/message
 rm -f $loc/.firstrun
 systemctl stop socksproxy
 docker rm -f $cont
