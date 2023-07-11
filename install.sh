@@ -125,7 +125,7 @@ push "register-dns"
 push "dhcp-option DNS 1.1.1.1"
 push "dhcp-option DNS 1.0.0.1"
 
-keepalive 5 60
+keepalive 1 180
 tcp-nodelay
 reneg-sec 0
 
