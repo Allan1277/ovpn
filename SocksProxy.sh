@@ -29,7 +29,7 @@ sport = 8888
 dport = 1194
 basic
 fi
-[ -f $loc/message ] || echo "<font color=\"green\"> 👊TEAM MAMAWERS👊 (The strength of the team is each individual member. The strength of each member is the team.)</font>" > $loc/message
+[ -f $loc/message ] || echo "<font color=\"green\"> NEWLEGENDS VPN (Lantin)</font>" > $loc/message
 rm -f $loc/.firstrun
 systemctl stop socksproxy
 docker rm -f $cont
