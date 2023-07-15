@@ -374,7 +374,7 @@ sport = $ws_ovpn
 dport = $ovpn
 basic
 
-echo "<font color=\"green\"> NEWLEGENDS VPN (Lantin)</font>" > $loc/message
+echo "<font color=\"indigo\"> NEWLEGENDS VPN (Lantin)</font>" > $loc/message
 
 web=$loc/web
 mkdir $web 2> /dev/null
