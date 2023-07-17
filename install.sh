@@ -35,10 +35,10 @@ read -p "Press ENTER to continue..."
 drbp=550
 ovpn=1194
 ws_ssh=80
-s_ovpn=8880
+ws_ovpn=2082
 st_ssh=443
 st_ovpn=2083
-
+s_ovpn=8880
 
 clear
 . /etc/os-release
