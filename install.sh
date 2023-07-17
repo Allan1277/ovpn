@@ -35,7 +35,7 @@ read -p "Press ENTER to continue..."
 drbp=550
 ovpn=1194
 ws_ssh=80
-ws_ovpn=8888
+ws_ovpn=2082
 st_ssh=443
 st_ovpn=2083
 
@@ -387,7 +387,7 @@ proto tcp
 remote 127.0.0.1 $ovpn
 route-method exe
 mute-replay-warnings
-http-proxy $MYIP 8888
+http-proxy $MYIP 8880
 verb 3
 auth-user-pass
 cipher none
