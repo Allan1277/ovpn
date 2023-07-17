@@ -33,12 +33,12 @@ read -p "Press ENTER to continue..."
 
 # Ports
 drbp=550
-ovpn=1194
+ovpn=8880
 ws_ssh=80
 ws_ovpn=2082
 st_ssh=443
 st_ovpn=2083
-s_ovpn=8880
+s_ovpn=1194
 
 clear
 . /etc/os-release
@@ -371,8 +371,8 @@ dport = $drbp
 
 [openvpn]
 timer = 0
-sport = $s_ovpn
-dport = $ovpn
+dport = $s_ovpn
+sport = $ovpn
 basic
 
 echo "<font color=\"blue\"> NEWLEGENDS VPN (Lantin)</font>" > $loc/message
