@@ -35,9 +35,10 @@ read -p "Press ENTER to continue..."
 drbp=550
 ovpn=1194
 ws_ssh=80
-ws_ovpn=2082
+s_ovpn=8880
 st_ssh=443
 st_ovpn=2083
+
 
 clear
 . /etc/os-release
@@ -370,7 +371,7 @@ dport = $drbp
 
 [openvpn]
 timer = 0
-sport = $ws_ovpn
+sport = $s_ovpn
 dport = $ovpn
 basic
 
