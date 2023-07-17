@@ -371,8 +371,8 @@ dport = $drbp
 
 [openvpn]
 timer = 0
-dport = $s_ovpn
-sport = $ovpn
+sport = $s_ovpn
+dport = $ovpn
 basic
 
 echo "<font color=\"blue\"> NEWLEGENDS VPN (Lantin)</font>" > $loc/message
