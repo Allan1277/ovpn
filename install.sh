@@ -33,12 +33,12 @@ read -p "Press ENTER to continue..."
 
 # Ports
 drbp=550
-ovpn=8880
+ovpn=1194
 ws_ssh=80
-ws_ovpn=2082
+ws_ovpn=8080
 st_ssh=443
 st_ovpn=2083
-s_ovpn=1194
+
 
 clear
 . /etc/os-release
@@ -371,8 +371,9 @@ dport = $drbp
 
 [openvpn]
 timer = 0
-sport = $s_ovpn
+sport = $ws_ovpn
 dport = $ovpn
+
 basic
 
 echo "<font color=\"blue\"> NEWLEGENDS VPN (Lantin)</font>" > $loc/message
@@ -388,7 +389,7 @@ proto tcp
 remote 127.0.0.1 $ovpn
 route-method exe
 mute-replay-warnings
-http-proxy $MYIP 8880
+http-proxy $MYIP 8080
 verb 3
 auth-user-pass
 cipher none
